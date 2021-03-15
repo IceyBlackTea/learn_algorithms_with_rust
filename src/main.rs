@@ -2,8 +2,8 @@
  * @Author: One_Random
  * @Date: 2021-03-14 20:50:52
  * @LastEditors: One_Random
- * @LastEditTime: 2021-03-15 14:46:45
- * @FilePath: \algorithms_learn\src\main.rs
+ * @LastEditTime: 2021-03-15 14:58:30
+ * @FilePath: \learn_algorithms_with_rust\src\main.rs
  * @Description: Copyright © 2020 One_Random. All rights reserved.
  */
 
