@@ -2,7 +2,7 @@
  * @Author: One_Random
  * @Date: 2021-03-17 06:18:19
  * @LastEditors: One_Random
- * @LastEditTime: 2021-03-19 00:44:05
+ * @LastEditTime: 2021-03-19 01:23:11
  * @FilePath: \learn_algorithms_with_rust\src\tree\binary.rs
  * @Description: Copyright © 2020 One_Random. All rights reserved.
  */
@@ -10,11 +10,13 @@
 use std::rc::Rc;
 use std::cell::{ Ref, RefCell, RefMut };
 
+#[derive(Debug)]
 pub enum Postion{
     LEFT,
     RIGHT,
 }
 
+#[derive(Debug)]
 pub enum Traversal{
     PREORDER,
     INORDER,
@@ -61,34 +63,59 @@ where
         return self.value;
     }
 
-    pub fn get_left(&self) -> Option<Ref<BinaryNode<T>>> {
+    fn get_left_child_node(&self) -> Option<Ref<BinaryNode<T>>> {
         match self.left {
-            Some(ref node) => Some(node.borrow()),
+            Some(ref node) =>  Some(node.borrow()),
             None => None
         }
     }
 
-    pub fn get_mutable_left(&mut self) -> Option<RefMut<BinaryNode<T>>> {
+    fn get_right_child_node(&self) -> Option<Ref<BinaryNode<T>>> {
+        match self.right {
+            Some(ref node) =>  Some(node.borrow()),
+            None => None
+        }
+    }
+
+    pub fn get_child_node(&self, postion: Postion) 
+        -> Option<Ref<BinaryNode<T>>>
+    {
+        match postion {
+            Postion::LEFT => self.get_left_child_node(),
+            Postion::RIGHT => self.get_right_child_node(),
+            _ => {
+                panic!("parameter {:?} is unkown!", postion);
+            }
+        }
+    }
+
+    fn get_mutable_left_child_node(&self) -> Option<RefMut<BinaryNode<T>>> {
         match self.left {
-            Some(ref mut node) => Some(node.borrow_mut()),
+            Some(ref node) =>  Some(node.borrow_mut()),
             None => None
         }
     }
 
-    pub fn get_right(&self) -> Option<Ref<BinaryNode<T>>> {
+    fn get_mutable_right_child_node(&self) -> Option<RefMut<BinaryNode<T>>> {
         match self.right {
-            Some(ref node) => Some(node.borrow()),
+            Some(ref node) =>  Some(node.borrow_mut()),
             None => None
         }
     }
 
-    pub fn get_mutable_right(&mut self) -> Option<RefMut<BinaryNode<T>>> {
-        match self.right {
-            Some(ref mut node) => Some(node.borrow_mut()),
-            None => None
+    pub fn get_mutable_child_node(&mut self, postion: Postion) 
+        -> Option<RefMut<BinaryNode<T>>>
+    {
+        match postion {
+            Postion::LEFT => self.get_mutable_left_child_node(),
+            Postion::RIGHT => self.get_mutable_right_child_node(),
+            _ => {
+                panic!("parameter {:?} is unkown!", postion);
+            }
         }
     }
 
+    // not completed yet
     // fn get_parent<'a>(&mut self, root: &'a mut BinaryNode<T>) -> Option<&'a mut BinaryNode<T>> {
     //     match root.get_left() {
     //         Some(left) => {
@@ -151,16 +178,17 @@ where
         }
     }
 
-    pub fn traversal(&self, traversal_type: Traversal) {
+    pub fn traversal(&self, traversal: Traversal) {
         let self_ref = RefCell::new(self.clone());
         let root = self_ref.borrow();
 
-        match traversal_type {
+        match traversal {
             Traversal::PREORDER => {
                 BinaryNode::preorder_traversal(root);
-            }
+            },
+            // not completed yet
             _ => {
-                panic!("para is wrong!");
+                panic!("parameter {:?} is unkown!", traversal);
             }
         }
     }

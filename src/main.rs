@@ -2,7 +2,7 @@
  * @Author: One_Random
  * @Date: 2021-03-14 20:50:52
  * @LastEditors: One_Random
- * @LastEditTime: 2021-03-19 00:50:07
+ * @LastEditTime: 2021-03-19 01:24:08
  * @FilePath: \learn_algorithms_with_rust\src\main.rs
  * @Description: Copyright © 2020 One_Random. All rights reserved.
  */
@@ -28,7 +28,7 @@
 // }
 
 mod tree;
-use tree::{ BinaryNode, Traversal};
+use tree::{ BinaryNode, Postion, Traversal};
 
 fn main() {
     let mut root = BinaryNode::new(&1);
@@ -43,8 +43,8 @@ fn main() {
 
     root.append(&leaf_b);
 
-    root.get_mutable_left().unwrap()
-        .get_mutable_right().unwrap()
+    root.get_mutable_child_node(Postion::LEFT).unwrap()
+        .get_mutable_child_node(Postion::RIGHT).unwrap()
         .append(&leaf_c);
 
     root.traversal(Traversal::PREORDER);
