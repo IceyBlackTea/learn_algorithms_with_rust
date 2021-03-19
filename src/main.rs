@@ -2,7 +2,7 @@
  * @Author: One_Random
  * @Date: 2021-03-14 20:50:52
  * @LastEditors: One_Random
- * @LastEditTime: 2021-03-19 01:24:08
+ * @LastEditTime: 2021-03-19 09:41:45
  * @FilePath: \learn_algorithms_with_rust\src\main.rs
  * @Description: Copyright © 2020 One_Random. All rights reserved.
  */
@@ -43,12 +43,13 @@ fn main() {
 
     root.append(&leaf_b);
 
-    root.get_mutable_child_node(Postion::LEFT).unwrap()
-        .get_mutable_child_node(Postion::RIGHT).unwrap()
+    root.get_mutable_next_node(Postion::LEFT).unwrap()
+        .get_mutable_next_node(Postion::RIGHT).unwrap()
         .append(&leaf_c);
 
-    root.traversal(Traversal::PREORDER);
+    // root.remove_child_node(Postion::RIGHT);
+
+    root.traversal(Traversal::LEVEL);
     
     // println!("{:?}", root);
-    // println!("{:?}", root.get_child());
 }
