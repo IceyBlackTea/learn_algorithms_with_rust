@@ -6,6 +6,7 @@
 ## 1. sort
    - ### [insertion sort](./src/sort/insertion.rs)
    - ### [merge sort](./src/sort/merge.rs)
+   - ### [heap sort](./src/sort/heap.rs)
 
 ## 2. tree
    - ### [binary tree](./src/tree/binary.rs)
