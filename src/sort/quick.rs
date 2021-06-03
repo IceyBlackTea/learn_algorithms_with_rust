@@ -2,16 +2,8 @@
  * @Author: One_Random
  * @Date: 2021-06-03 15:24:47
  * @LastEditors: One_Random
- * @LastEditTime: 2021-06-03 16:55:51
+ * @LastEditTime: 2021-06-03 17:16:45
  * @FilePath: /learn_algorithms_with_rust/src/sort/quick.rs
- * @Description: Copyright © 2020 One_Random. All rights reserved.
- */
-/*
- * @Author: One_Random
- * @Date: 2021-03-15 00:10:34
- * @LastEditors: One_Random
- * @LastEditTime: 2021-06-03 13:09:54
- * @FilePath: /learn_algorithms_with_rust/src/sort/merge.rs
  * @Description: Copyright © 2020 One_Random. All rights reserved.
  */
 
