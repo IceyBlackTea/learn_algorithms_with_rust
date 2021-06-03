@@ -2,14 +2,14 @@
  * @Author: One_Random
  * @Date: 2021-03-15 00:10:34
  * @LastEditors: One_Random
- * @LastEditTime: 2021-03-15 14:57:42
- * @FilePath: \learn_algorithms_with_rust\src\sort\merge.rs
+ * @LastEditTime: 2021-06-03 13:09:54
+ * @FilePath: /learn_algorithms_with_rust/src/sort/merge.rs
  * @Description: Copyright © 2020 One_Random. All rights reserved.
  */
 
 use std::cmp::Ordering;
 
- /// Returns the array sorted from smallest to largest as a [`Vec<_>`]
+/// Returns the array sorted from smallest to largest as a [`Vec<_>`]
 ///
 /// # Arguments
 ///
@@ -27,6 +27,8 @@ where
     T: Copy + PartialOrd,
 {
     let mut sorted_array: Vec<T> = array.clone();
+
+    if sorted_array.len() < 2 { return sorted_array; }
 
     _merge_sort(&mut sorted_array);
 

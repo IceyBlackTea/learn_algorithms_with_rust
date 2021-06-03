@@ -2,7 +2,7 @@
  * @Author: One_Random
  * @Date: 2021-03-14 20:50:52
  * @LastEditors: One_Random
- * @LastEditTime: 2021-06-01 15:07:29
+ * @LastEditTime: 2021-06-03 13:44:14
  * @FilePath: /learn_algorithms_with_rust/src/main.rs
  * @Description: Copyright © 2020 One_Random. All rights reserved.
  */
@@ -14,12 +14,16 @@
 
 mod sort;
 fn sort_test() {
-    let array = vec![5, 3, 4, 8];
+    let array = vec![5, 3, 4, 2, 9, 1, 8, 6, 7, 0];
+
     let insertion_sorted_array = sort::insertion_sort(&array);
     let merge_sorted_array = sort::merge_sort(&array);
+    let heap_sorted_array = sort::heap_sort(&array);
+
     println!("{:?}", array);
     println!("{:?}", insertion_sorted_array);
     println!("{:?}", merge_sorted_array);
+    println!("{:?}", heap_sorted_array);
 }
 
 // mod tree;
