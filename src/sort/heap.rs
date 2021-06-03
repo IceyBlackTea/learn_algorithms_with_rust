@@ -2,7 +2,7 @@
  * @Author: One_Random
  * @Date: 2021-03-17 03:58:18
  * @LastEditors: One_Random
- * @LastEditTime: 2021-06-03 13:44:37
+ * @LastEditTime: 2021-06-03 16:32:15
  * @FilePath: /learn_algorithms_with_rust/src/sort/heap.rs
  * @Description: Copyright © 2020 One_Random. All rights reserved.
  */
@@ -28,13 +28,11 @@ where
 
     let length = sorted_array.len();
 
-    if length < 2 { return sorted_array; }
-
-    for index in (0..=(length / 2 - 1)).rev() {
+    for index in (0..length / 2).rev() {
         max_heapify(&mut sorted_array, index, length - 1);
     }
 
-    for index in (1..=(length - 1)).rev() {
+    for index in (1..length).rev() {
         sorted_array.swap(0, index);
         max_heapify(&mut sorted_array, 0, index - 1);
     }

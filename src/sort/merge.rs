@@ -2,7 +2,7 @@
  * @Author: One_Random
  * @Date: 2021-03-15 00:10:34
  * @LastEditors: One_Random
- * @LastEditTime: 2021-06-03 13:09:54
+ * @LastEditTime: 2021-06-03 16:28:42
  * @FilePath: /learn_algorithms_with_rust/src/sort/merge.rs
  * @Description: Copyright © 2020 One_Random. All rights reserved.
  */
@@ -27,8 +27,6 @@ where
     T: Copy + PartialOrd,
 {
     let mut sorted_array: Vec<T> = array.clone();
-
-    if sorted_array.len() < 2 { return sorted_array; }
 
     _merge_sort(&mut sorted_array);
 
@@ -59,11 +57,7 @@ where
 
     let mut merged_array = Vec::<T>::new();
 
-    loop {
-        if i == mid || j == array.len() {
-            break;
-        }
-
+    while !(i == mid || j == array.len()) {
         if array[i] < array[j] {
             merged_array.push(array[i]);
             i += 1;
