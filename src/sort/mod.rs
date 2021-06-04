@@ -2,7 +2,7 @@
  * @Author: One_Random
  * @Date: 2021-03-14 21:04:43
  * @LastEditors: One_Random
- * @LastEditTime: 2021-06-04 15:42:22
+ * @LastEditTime: 2021-06-04 19:01:49
  * @FilePath: /learn_algorithms_with_rust/src/sort/mod.rs
  * @Description: Copyright © 2020 One_Random. All rights reserved.
  */
@@ -24,3 +24,6 @@ pub use counting::counting_sort;
 
 mod radix;
 pub use radix::radix_sort;
+
+mod bucket;
+pub use bucket::bucket_sort;

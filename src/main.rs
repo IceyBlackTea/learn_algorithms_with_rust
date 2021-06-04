@@ -2,7 +2,7 @@
  * @Author: One_Random
  * @Date: 2021-03-14 20:50:52
  * @LastEditors: One_Random
- * @LastEditTime: 2021-06-04 15:57:04
+ * @LastEditTime: 2021-06-04 19:02:50
  * @FilePath: /learn_algorithms_with_rust/src/main.rs
  * @Description: Copyright © 2020 One_Random. All rights reserved.
  */
@@ -32,14 +32,16 @@ fn sort_test() {
     let quick_sorted_array = sort::quick_sort(&array);
     let counting_sorted_array = sort::counting_sort(&array);
     let radix_sorted_array = sort::radix_sort(&array);
+    let bucket_sorted_array = sort::bucket_sort(&array);
 
     println!("{:?}", array);
     println!("{:?}", insertion_sorted_array);
     println!("{:?}", merge_sorted_array);
     println!("{:?}", heap_sorted_array);
-    println!{"{:?}", quick_sorted_array};
-    println!{"{:?}", counting_sorted_array};
-    println!{"{:?}", radix_sorted_array};
+    println!("{:?}", quick_sorted_array);
+    println!("{:?}", counting_sorted_array);
+    println!("{:?}", radix_sorted_array);
+    println!("{:?}", bucket_sorted_array);
 }
 
 // mod tree;
