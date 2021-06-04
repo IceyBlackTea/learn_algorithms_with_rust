@@ -2,7 +2,7 @@
  * @Author: One_Random
  * @Date: 2021-03-15 00:10:34
  * @LastEditors: One_Random
- * @LastEditTime: 2021-06-04 17:59:06
+ * @LastEditTime: 2021-06-04 18:58:44
  * @FilePath: /learn_algorithms_with_rust/src/sort/merge.rs
  * @Description: Copyright © 2020 One_Random. All rights reserved.
  */
