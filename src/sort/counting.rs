@@ -2,7 +2,7 @@
  * @Author: One_Random
  * @Date: 2021-06-04 14:47:46
  * @LastEditors: One_Random
- * @LastEditTime: 2021-06-04 15:33:31
+ * @LastEditTime: 2021-06-04 17:56:06
  * @FilePath: /learn_algorithms_with_rust/src/sort/counting.rs
  * @Description: Copyright © 2020 One_Random. All rights reserved.
  */
@@ -32,13 +32,9 @@ pub fn counting_sort(array: &Vec<usize>) -> Vec<usize>
 
     let mut counter: Vec<usize> = vec![0; max+1];
 
-    for &value in sorted_array.iter() {
-        counter[value] += 1;
-    }
+    for &value in sorted_array.iter() { counter[value] += 1; }
 
-    for i in 1..max + 1 {
-        counter[i] += counter[i - 1];
-    }
+    for i in 1..max + 1 { counter[i] += counter[i - 1]; }
     
     for i in (0..length).rev() {
         sorted_array[counter[array[i]]-1] = array[i];

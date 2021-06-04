@@ -2,7 +2,7 @@
  * @Author: One_Random
  * @Date: 2021-03-15 00:10:34
  * @LastEditors: One_Random
- * @LastEditTime: 2021-06-03 16:28:42
+ * @LastEditTime: 2021-06-04 17:59:06
  * @FilePath: /learn_algorithms_with_rust/src/sort/merge.rs
  * @Description: Copyright © 2020 One_Random. All rights reserved.
  */
@@ -50,7 +50,7 @@ fn merge<T>(array:&mut [T])
 where
     T: Copy + PartialOrd,
 {
-    let mid = (0 + array.len()) / 2;
+    let mid = array.len() / 2;
 
     let mut i = 0;
     let mut j = mid;
@@ -68,7 +68,6 @@ where
     }
 
     match (i.cmp(&mid), j.cmp(&array.len())) {
-        (Ordering::Equal, Ordering::Equal) => (),
         (Ordering::Less, Ordering::Equal) => {
             for index in i..mid {
                 merged_array.push(array[index]);
@@ -78,7 +77,7 @@ where
             for index in j..array.len() {
                 merged_array.push(array[index]);
             }
-        }
+        },
         _ => (),
     }
 

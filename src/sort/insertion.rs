@@ -2,7 +2,7 @@
  * @Author: One_Random
  * @Date: 2021-03-14 21:06:06
  * @LastEditors: One_Random
- * @LastEditTime: 2021-06-03 16:29:40
+ * @LastEditTime: 2021-06-04 18:04:07
  * @FilePath: /learn_algorithms_with_rust/src/sort/insertion.rs
  * @Description: Copyright © 2020 One_Random. All rights reserved.
  */
@@ -26,19 +26,16 @@ where
 {
     let mut sorted_array: Vec<T> = array.clone();
 
-    let length = sorted_array.len();
+    for i in 1..sorted_array.len() {
+        let key = sorted_array[i];
 
-    for j in 1..length {
-        let key = sorted_array[j];
-
-        let mut i = j;
-        
-        while i > 0 && sorted_array[i - 1] > key {
-            sorted_array[i] = sorted_array[i - 1];
-            i -= 1;
+        let mut index = i;
+        while index > 0 && sorted_array[index - 1] > key {
+            sorted_array[index] = sorted_array[index - 1];
+            index -= 1;
         }
 
-        sorted_array[i] = key;
+        sorted_array[index] = key;
     }
 
     return sorted_array;

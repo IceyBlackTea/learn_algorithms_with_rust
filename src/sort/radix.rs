@@ -2,7 +2,7 @@
  * @Author: One_Random
  * @Date: 2021-06-04 14:47:46
  * @LastEditors: One_Random
- * @LastEditTime: 2021-06-04 16:10:33
+ * @LastEditTime: 2021-06-04 18:01:15
  * @FilePath: /learn_algorithms_with_rust/src/sort/radix.rs
  * @Description: Copyright © 2020 One_Random. All rights reserved.
  */
@@ -28,7 +28,6 @@ pub fn radix_sort(array: &Vec<usize>) -> Vec<usize>
 
     if length < 2 { return sorted_array; }
     
-
     let bit = get_max_bit(&sorted_array);
 
     let mut radix = 1;
@@ -41,9 +40,7 @@ pub fn radix_sort(array: &Vec<usize>) -> Vec<usize>
             counter[(value / radix) % 10] += 1;
         }
 
-        for i in 1..10 {
-            counter[i] += counter[i - 1];
-        }
+        for i in 1..10 { counter[i] += counter[i - 1]; }
 
         for &value in sorted_array.iter().rev() {
             let index = (value / radix) % 10;
