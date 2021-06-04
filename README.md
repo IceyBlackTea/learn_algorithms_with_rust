@@ -10,6 +10,7 @@
    - ### [quick sort](./src/sort/quick.rs)
    - ### [counting sort](./src/sort/counting.rs)
    - ### [radix sort](./src/sort/radix.rs)
+   - ### [bucket sort](./src/sort/bucket.rs)
 
 ## 2. tree
    - ### [binary tree](./src/tree/binary.rs)
